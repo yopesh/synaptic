@@ -1,0 +1,54 @@
+.page-header {
+  padding: 10px 20px;
+}
+
+h3 {
+  float: left;
+  margin: 10px 0;
+}
+
+table {
+  width: 100%;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+th.mat--header-cell:last-of-type,
+td.mat-cell:last-of-type {
+  min-width: 60px;
+}
+
+.fa-address-book,
+.fa-comments {
+  margin-right: 15px;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  float: right;
+}
+
+.table-container {
+  max-height: 500px;
+  overflow: auto;
+  position: relative;
+}
+
+td.mat-cell,
+td.mat-footer-cell,
+th.mat-header-cell {
+  padding: 10px;
+}
+
+td.mat-cell {
+  border: 0;
+}
+
+.mat-paginator-sticky {
+  left: 0;
+  bottom: 0px;
+  position: sticky;
+  z-index: 10;
+}

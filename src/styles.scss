@@ -1,1 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.clearfix {
+  clear: both;
+}
+
+th.mat-header-cell.cell-center,
+td.mat-cell.cell-center {
+  text-align: center;
+}
+
+.cell-center button {
+  display: block;
+  width: 100%;
+}
+
+.fa,
+.far,
+.fas {
+  font-size: 18px;
+}
+
+.fa-thermometer-full {
+  color: #e60f16;
+}
+
+.fa-thermometer-half {
+  color: #f8931f;
+}
+
+.fa-thermometer-empty {
+  color: #2aabe4;
+}
+
+.fa-check {
+  color: #2cc96c;
+}
+
+.fa-question {
+  color: #52b5f0;
+}
+
+.fa-times {
+  color: #fe4335;
+}
+
+.fa-address-book,
+.fa-link,
+.fa-comments {
+  color: #35abc9;
+}

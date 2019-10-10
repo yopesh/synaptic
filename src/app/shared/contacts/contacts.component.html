@@ -1,0 +1,71 @@
+<div>
+    <h3>{{data.account.Name}}</h3>
+
+    <!-- Search field -->
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+    </mat-form-field>
+
+</div>
+
+<div class="clearfix"></div>
+
+<mat-dialog-content class="mat-typography">
+    <div class="table-container">
+
+        <table mat-table [dataSource]="dataSource" matSort matSortActive="Name" matSortDirection="asc"
+            matSortDisableClear aria-label="Elements">
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="Name" sticky>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+                <td mat-cell *matCellDef="let row">{{row.Name}}</td>
+            </ng-container>
+
+            <!-- Id Column -->
+            <ng-container matColumnDef="Id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+                <td mat-cell *matCellDef="let row">{{row.Id}}</td>
+            </ng-container>
+
+            <!-- Title Column -->
+            <ng-container matColumnDef="Title">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+                <td mat-cell *matCellDef="let row">{{row.Title ? row.Title : '-'}}</td>
+            </ng-container>
+
+            <!-- Phone Column -->
+            <ng-container matColumnDef="Phone">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone</th>
+                <td mat-cell *matCellDef="let row"><a href="tel:{{row.Phone}}">{{row.Phone ? row.Phone : '-'}}</a></td>
+            </ng-container>
+
+            <!-- Department Column -->
+            <ng-container matColumnDef="Department">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Department</th>
+                <td mat-cell *matCellDef="let row">{{row.Department ? row.Department : '-'}}</td>
+            </ng-container>
+
+            <!-- Email Column -->
+            <ng-container matColumnDef="Email">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+                <td mat-cell *matCellDef="let row"><a href="mailto:{{row.Email}}"
+                        target="_blank">{{row.Email ? row.Email : '-'}}</a></td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <!-- Pagination -->
+        <mat-paginator class="mat-paginator-sticky" #paginator [length]="dataSource?.data.length" [pageIndex]="0"
+            [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 50]">
+        </mat-paginator>
+
+    </div>
+</mat-dialog-content>
+
+<!-- Action buttons -->
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
